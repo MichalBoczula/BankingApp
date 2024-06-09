@@ -196,6 +196,41 @@ namespace Banking.Persistance.Migrations.Query
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Addresses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BuildingNumber = "1",
+                            City = "CityA",
+                            CustomerId = 1,
+                            FlatNumber = "101",
+                            PostCode = "10001",
+                            Street = "123 Main St",
+                            VerificationStatus = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BuildingNumber = "2",
+                            City = "CityB",
+                            CustomerId = 2,
+                            FlatNumber = "202",
+                            PostCode = "10002",
+                            Street = "456 Elm St",
+                            VerificationStatus = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BuildingNumber = "3",
+                            City = "CityC",
+                            CustomerId = 3,
+                            FlatNumber = "303",
+                            PostCode = "10003",
+                            Street = "789 Oak St",
+                            VerificationStatus = 1
+                        });
                 });
 
             modelBuilder.Entity("Banking.Domain.Entities.BankingAccount", b =>
@@ -225,6 +260,32 @@ namespace Banking.Persistance.Migrations.Query
                     b.HasIndex("CustomerId");
 
                     b.ToTable("BankingAccounts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountNumber = "ACC001",
+                            AccountType = 2,
+                            Balance = 1000.00m,
+                            CustomerId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountNumber = "ACC002",
+                            AccountType = 2,
+                            Balance = 2000.00m,
+                            CustomerId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountNumber = "ACC003",
+                            AccountType = 2,
+                            Balance = 3000.00m,
+                            CustomerId = 3
+                        });
                 });
 
             modelBuilder.Entity("Banking.Domain.Entities.Customer", b =>
@@ -244,6 +305,26 @@ namespace Banking.Persistance.Migrations.Query
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccountNumber = new Guid("d5212365-524a-430d-ac75-14a0983edf62"),
+                            PersonalDataId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AccountNumber = new Guid("64652d35-1df7-4331-80ef-aef7d620e046"),
+                            PersonalDataId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AccountNumber = new Guid("7febeceb-6e20-4151-871b-d5324c0f735b"),
+                            PersonalDataId = 3
+                        });
                 });
 
             modelBuilder.Entity("Banking.Domain.Entities.Email", b =>
@@ -270,6 +351,29 @@ namespace Banking.Persistance.Migrations.Query
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Emails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "customer1@example.com",
+                            CustomerId = 1,
+                            VerificationStatus = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "customer2@example.com",
+                            CustomerId = 2,
+                            VerificationStatus = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "customer3@example.com",
+                            CustomerId = 3,
+                            VerificationStatus = 1
+                        });
                 });
 
             modelBuilder.Entity("Banking.Domain.Entities.Operation", b =>
@@ -347,6 +451,38 @@ namespace Banking.Persistance.Migrations.Query
                         .IsUnique();
 
                     b.ToTable("PersonalData");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CustomerId = 1,
+                            DateOfBirth = new DateTime(1985, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DocumentType = 1,
+                            FirstName = "John",
+                            IdentityNumber = "1234567890",
+                            LastName = "Doe"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CustomerId = 2,
+                            DateOfBirth = new DateTime(1990, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DocumentType = 2,
+                            FirstName = "Jane",
+                            IdentityNumber = "0987654321",
+                            LastName = "Smith"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CustomerId = 3,
+                            DateOfBirth = new DateTime(1980, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DocumentType = 1,
+                            FirstName = "Alice",
+                            IdentityNumber = "1122334455",
+                            LastName = "Johnson"
+                        });
                 });
 
             modelBuilder.Entity("Banking.Domain.Entities.Phone", b =>
@@ -378,6 +514,32 @@ namespace Banking.Persistance.Migrations.Query
                     b.HasIndex("CustomerId");
 
                     b.ToTable("Phones");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryCode = "+1",
+                            CustomerId = 1,
+                            Number = "123456789",
+                            VerificationStatus = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryCode = "+1",
+                            CustomerId = 2,
+                            Number = "987654321",
+                            VerificationStatus = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryCode = "+1",
+                            CustomerId = 3,
+                            Number = "555666777",
+                            VerificationStatus = 1
+                        });
                 });
 
             modelBuilder.Entity("Banking.Domain.Entities.Address", b =>

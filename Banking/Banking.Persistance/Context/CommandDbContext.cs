@@ -1,5 +1,6 @@
 ﻿using Banking.Domain.Dictionaries.Tables;
 using Banking.Domain.Entities;
+using Banking.Persistance.Seed;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
@@ -30,6 +31,7 @@ namespace Banking.Persistance.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.Seed();
         }
     }
 }
