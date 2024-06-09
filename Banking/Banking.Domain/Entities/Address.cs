@@ -1,5 +1,7 @@
 ﻿using Banking.Domain.Dictionaries.Enums;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Banking.Persistance")]
 namespace Banking.Domain.Entities
 {
     internal class Address
@@ -10,7 +12,7 @@ namespace Banking.Domain.Entities
         public string PostCode { get; set; }
         public string BuildingNumber { get; set; }
         public string FlatNumber { get; set; }
-        public VerificationStatus VerificationStatus { get; set; }
+        public VerificationStatusEnum VerificationStatus { get; set; }
         public int CustomerId { get; set; }
         public Customer CustomerRef { get; set; }
     }

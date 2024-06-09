@@ -1,4 +1,7 @@
-﻿namespace Banking.Domain.Entities
+﻿using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleTo("Banking.Persistance")]
+namespace Banking.Domain.Entities
 {
     internal class Customer
     {
@@ -9,5 +12,6 @@
         public List<Address> Addresses { get; set; }
         public List<Email> Emails { get; set; }
         public List<Phone> Phones { get; set; }
+        public List<BankingAccount> BankingAccounts { get; set; }
     }
 }

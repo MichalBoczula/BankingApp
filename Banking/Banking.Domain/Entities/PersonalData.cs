@@ -1,5 +1,7 @@
 ﻿using Banking.Domain.Dictionaries.Enums;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Banking.Persistance")]
 namespace Banking.Domain.Entities
 {
     internal class PersonalData
@@ -9,7 +11,7 @@ namespace Banking.Domain.Entities
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string IdentityNumber { get; set; }
-        public DocumentType DocumentType { get; set; }
+        public DocumentTypeEnum DocumentType { get; set; }
         public int CustomerId { get; set; }
         public Customer CustomerRef { get; set; }
     }
