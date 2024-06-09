@@ -8,6 +8,6 @@ namespace Banking.Domain.Dictionaries.Enums
         BankingTransfer = 1,
         AtmOperation = 2,
         BLIK = 3,
-        CardPayment= 3
+        CardPayment= 4
     }
 }

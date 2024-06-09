@@ -23,5 +23,4 @@ namespace Banking.Persistance.Configuration.Dictionaries
             );
         }
     }
-
 }
