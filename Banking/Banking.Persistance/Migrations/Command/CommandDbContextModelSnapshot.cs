@@ -296,7 +296,7 @@ namespace Banking.Persistance.Migrations.Command
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<Guid>("AccountNumber")
+                    b.Property<Guid>("CustomerNumber")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("PersonalDataId")
@@ -310,19 +310,19 @@ namespace Banking.Persistance.Migrations.Command
                         new
                         {
                             Id = 1,
-                            AccountNumber = new Guid("d5212365-524a-430d-ac75-14a0983edf62"),
+                            CustomerNumber = new Guid("d5212365-524a-430d-ac75-14a0983edf62"),
                             PersonalDataId = 1
                         },
                         new
                         {
                             Id = 2,
-                            AccountNumber = new Guid("64652d35-1df7-4331-80ef-aef7d620e046"),
+                            CustomerNumber = new Guid("64652d35-1df7-4331-80ef-aef7d620e046"),
                             PersonalDataId = 2
                         },
                         new
                         {
                             Id = 3,
-                            AccountNumber = new Guid("7febeceb-6e20-4151-871b-d5324c0f735b"),
+                            CustomerNumber = new Guid("7febeceb-6e20-4151-871b-d5324c0f735b"),
                             PersonalDataId = 3
                         });
                 });

@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Banking.Persistance\Banking.Persistance.csproj" />
+    <ProjectReference Include="..\BankingApp.DataTransferObject\BankingApp.DataTransferObject.csproj" />
   </ItemGroup>
 
 </Project>

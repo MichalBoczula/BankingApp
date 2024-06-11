@@ -1,5 +1,6 @@
 ﻿using Banking.Domain.Dictionaries.Tables;
 using Banking.Domain.Entities;
+using Banking.Persistance.Repositories.Base;
 using Banking.Persistance.Seed;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
@@ -7,7 +8,7 @@ using System.Reflection;
 
 namespace Banking.Persistance.Context
 {
-    internal class CommandDbContext : DbContext
+    internal class CommandDbContext : DbContext, ICommandDbContext
     {
         //Entities
         public DbSet<Address> Addresses { get; set; }

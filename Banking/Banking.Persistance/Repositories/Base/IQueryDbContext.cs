@@ -1,15 +1,11 @@
 ﻿using Banking.Domain.Dictionaries.Tables;
 using Banking.Domain.Entities;
-using Banking.Persistance.Repositories.Base;
-using Banking.Persistance.Seed;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 
-namespace Banking.Persistance.Context
+namespace Banking.Persistance.Repositories.Base
 {
-    internal class QueryDbContext : DbContext, IQueryDbContext
-    {
+    internal interface IQueryDbContext
+    {       
         //Entities
         public DbSet<Address> Addresses { get; set; }
         public DbSet<BankingAccount> BankingAccounts { get; set; }
@@ -19,20 +15,11 @@ namespace Banking.Persistance.Context
         public DbSet<PersonalData> PersonalData { get; set; }
         public DbSet<Phone> Phones { get; set; }
 
-        //Dictionaries
         public DbSet<AccountType> AccountTypes { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<OperationType> OperationTypes { get; set; }
         public DbSet<VerificationStatus> VerificationStatuses { get; set; }
 
-        public QueryDbContext([NotNull] DbContextOptions<QueryDbContext> options) : base(options)
-        {
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            modelBuilder.Seed();
-        }
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

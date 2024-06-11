@@ -17,19 +17,19 @@ namespace Banking.Persistance.Seed
                 new Customer
                 {
                     Id = firstCustomerId,
-                    AccountNumber = new Guid("d5212365-524a-430d-ac75-14a0983edf62"),
+                    CustomerNumber = new Guid("d5212365-524a-430d-ac75-14a0983edf62"),
                     PersonalDataId = firstCustomerId
                 },
                 new Customer
                 {
                     Id = secondCustomerId,
-                    AccountNumber = new Guid("64652d35-1df7-4331-80ef-aef7d620e046"),
+                    CustomerNumber = new Guid("64652d35-1df7-4331-80ef-aef7d620e046"),
                     PersonalDataId = secondCustomerId
                 },
                 new Customer
                 {
                     Id = thirdCustomerId,
-                    AccountNumber = new Guid("7febeceb-6e20-4151-871b-d5324c0f735b"),
+                    CustomerNumber = new Guid("7febeceb-6e20-4151-871b-d5324c0f735b"),
                     PersonalDataId = thirdCustomerId
                 });
             #endregion

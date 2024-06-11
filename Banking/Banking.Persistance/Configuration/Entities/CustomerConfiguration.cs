@@ -10,7 +10,7 @@ namespace Banking.Persistance.Configuration.Entities
         {
             builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.AccountNumber)
+            builder.Property(c => c.CustomerNumber)
                 .IsRequired();
         }
     }
