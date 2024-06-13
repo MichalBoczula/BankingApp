@@ -1,6 +1,8 @@
 ﻿using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using MediatR;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Banking.Application.UnitTests")]
 namespace Banking.Application.Features.Queries.Addresses
 {
     internal record GetAddressByIdQuery : IRequest<AddressDto>

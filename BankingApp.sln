@@ -27,11 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Domain", "Banking\B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banking.DataTransferObject", "Banking.DataTransferObject", "{547AED34-1F74-4586-B697-F062AECEC77B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingApp.DataTransferObject", "Banking\BankingApp.DataTransferObject\BankingApp.DataTransferObject.csproj", "{AE5822D3-1A9C-445B-9A81-8710613D4756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankingApp.DataTransferObject", "Banking\BankingApp.DataTransferObject\BankingApp.DataTransferObject.csproj", "{AE5822D3-1A9C-445B-9A81-8710613D4756}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1344E120-778E-4F86-8E51-D262966685F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Persistance.UnitTests", "Banking\Banking.Persistance.UnitTests\Banking.Persistance.UnitTests.csproj", "{3D011930-1671-4745-BC8C-695433B47DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Persistance.UnitTests", "Banking\Banking.Persistance.UnitTests\Banking.Persistance.UnitTests.csproj", "{3D011930-1671-4745-BC8C-695433B47DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Application.UnitTests", "Banking\Banking.Application.UnitTests\Banking.Application.UnitTests.csproj", "{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{3D011930-1671-4745-BC8C-695433B47DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D011930-1671-4745-BC8C-695433B47DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D011930-1671-4745-BC8C-695433B47DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{547AED34-1F74-4586-B697-F062AECEC77B} = {F04A2BC1-81FC-4D7C-A405-4039F75F712B}
 		{AE5822D3-1A9C-445B-9A81-8710613D4756} = {547AED34-1F74-4586-B697-F062AECEC77B}
 		{3D011930-1671-4745-BC8C-695433B47DF3} = {1344E120-778E-4F86-8E51-D262966685F2}
+		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7} = {1344E120-778E-4F86-8E51-D262966685F2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E5B15A9-9E79-41C2-A058-0A1DF1E01D07}

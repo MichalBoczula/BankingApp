@@ -1,7 +1,9 @@
 ﻿using Banking.Persistance.Repositories.Queries.Abstract;
 using BankingApp.DataTransferObject.Internals.CustomerAccountData;
 using MediatR;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Banking.Application.UnitTests")]
 namespace Banking.Application.Features.Queries.CustomerData.GetCustomerAccountDataById
 {
     internal record GetCustomerAccountDataByIdQueryHandler : IRequestHandler<GetCustomerAccountDataByIdQuery, CustomerAccountDataDto>
