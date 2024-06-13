@@ -1,4 +1,4 @@
-﻿using Banking.Domain.Dictionaries.Enums;
+﻿using BankingApp.DataTransferObject.Enums;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Banking.Persistance")]

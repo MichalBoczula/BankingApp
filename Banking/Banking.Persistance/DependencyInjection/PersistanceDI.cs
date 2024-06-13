@@ -27,6 +27,7 @@ namespace Banking.Persistance.DependencyInjection
             services.AddScoped<IQueryDbContext, QueryDbContext>();
             services.AddScoped<ICommandDbContext, CommandDbContext>();
             services.AddScoped<IQueriesCustomerDataRepository, QueriesCustomerDataRepository>();
+            services.AddScoped<IQueriesAddressDataRepository, QueriesAddressDataRepository>();
             return services;
         }
     }

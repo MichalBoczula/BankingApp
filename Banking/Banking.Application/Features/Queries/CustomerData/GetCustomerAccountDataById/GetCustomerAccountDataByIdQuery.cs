@@ -1,7 +1,7 @@
-﻿using BankingApp.DataTransferObject.Internals;
+﻿using BankingApp.DataTransferObject.Internals.CustomerAccountData;
 using MediatR;
 
-namespace Banking.Application.Features.Queries.GetCustomerAccountDataById
+namespace Banking.Application.Features.Queries.CustomerData.GetCustomerAccountDataById
 {
     internal record GetCustomerAccountDataByIdQuery : IRequest<CustomerAccountDataDto>
     {

@@ -1,5 +1,5 @@
-﻿using Banking.Domain.Dictionaries.Enums;
-using Banking.Domain.Dictionaries.Tables;
+﻿using Banking.Domain.Dictionaries.Tables;
+using BankingApp.DataTransferObject.Enums;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

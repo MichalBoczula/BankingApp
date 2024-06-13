@@ -1,18 +1,13 @@
 ﻿using BankingApp.DataTransferObject.Enums;
-using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Banking.Persistance")]
-namespace Banking.Domain.Entities
+namespace BankingApp.DataTransferObject.Internals.CustomerAccountData
 {
-    internal class Operation
+    public class OperationDto
     {
-        public int Id { get; set; }
         public OperationTypeEnum OperationType { get; set; }
         public string FromAccount { get; set; }
         public string ToAccount { get; set; }
         public decimal Amount { get; set; }
         public DateTime OperationDate { get; set; }
-        public int BankingAccountId { get; set; }
-        public BankingAccount BankingAccountRef { get; set; }
     }
 }

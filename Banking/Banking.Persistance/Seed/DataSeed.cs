@@ -1,5 +1,5 @@
-﻿using Banking.Domain.Dictionaries.Enums;
-using Banking.Domain.Entities;
+﻿using Banking.Domain.Entities;
+using BankingApp.DataTransferObject.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Banking.Persistance.Seed

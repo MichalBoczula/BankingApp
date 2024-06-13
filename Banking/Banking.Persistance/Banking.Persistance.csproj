@@ -21,4 +21,9 @@
     <ProjectReference Include="..\BankingApp.DataTransferObject\BankingApp.DataTransferObject.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Commands\Abstract\" />
+    <Folder Include="Repositories\Commands\Concrete\" />
+  </ItemGroup>
+
 </Project>
