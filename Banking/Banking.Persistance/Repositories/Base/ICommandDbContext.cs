@@ -20,5 +20,7 @@ namespace Banking.Persistance.Repositories.Base
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<OperationType> OperationTypes { get; set; }
         public DbSet<VerificationStatus> VerificationStatuses { get; set; }
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

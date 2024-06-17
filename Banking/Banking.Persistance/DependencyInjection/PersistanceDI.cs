@@ -1,6 +1,8 @@
 ﻿using Banking.Persistance.Context;
 using Banking.Persistance.Profiles;
 using Banking.Persistance.Repositories.Base;
+using Banking.Persistance.Repositories.Commands.Abstract;
+using Banking.Persistance.Repositories.Commands.Concrete;
 using Banking.Persistance.Repositories.Queries.Abstract;
 using Banking.Persistance.Repositories.Queries.Concrete;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +28,11 @@ namespace Banking.Persistance.DependencyInjection
 
             services.AddScoped<IQueryDbContext, QueryDbContext>();
             services.AddScoped<ICommandDbContext, CommandDbContext>();
+
             services.AddScoped<IQueriesCustomerDataRepository, QueriesCustomerDataRepository>();
             services.AddScoped<IQueriesAddressDataRepository, QueriesAddressDataRepository>();
+
+            services.AddScoped<ICommandsAddressDataRepository, CommandsAddressDataRepository>();
             return services;
         }
     }
