@@ -5,6 +5,6 @@ namespace Banking.Application.Features.Commands.Addresses.AddAddress
 {
     internal record AddAddressCommand : IRequest<int>
     {
-        public required AddressExternal Contract { get; init; }
+        public required CreatedAddressExternal Contract { get; init; }
     }
 }

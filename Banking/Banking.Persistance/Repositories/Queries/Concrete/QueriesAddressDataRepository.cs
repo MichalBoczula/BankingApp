@@ -20,24 +20,9 @@ namespace Banking.Persistance.Repositories.Queries.Concrete
 
         public async Task<AddressDto> GetAddressById(int addressId)
         {
-            var address = await _queryDbContext.Addresses.FirstOrDefaultAsync(a => a.Id == addressId);
+            var address = await _queryDbContext.Addresses.AsNoTracking().FirstOrDefaultAsync(a => a.Id == addressId);
             var result = _mapper.Map<AddressDto>(address);
             return result;
-        }
-
-        public Task<int> AddAddress(AddressExternal address)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> EditAddress(AddressExternal address)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeleteAddress(int addressId)
-        {
-            throw new NotImplementedException();
         }
     }
 }

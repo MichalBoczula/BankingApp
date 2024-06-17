@@ -19,33 +19,50 @@ namespace Banking.Persistance.Repositories.Commands.Concrete
             _mapper = mapper;
         }
 
-        public async Task<int> AddAddress(AddressExternal address, CancellationToken cancellationToken)
+        public async Task<int> AddAddress(CreatedAddressExternal address, CancellationToken cancellationToken)
         {
             var addressToAdd = _mapper.Map<Address>(address);
+            
             await _context.Addresses.AddAsync(addressToAdd);
             await _context.SaveChangesAsync(cancellationToken);
+            
             return addressToAdd.Id;
         }
 
-        public async Task<bool> EditAddress(AddressExternal address, CancellationToken cancellationToken)
+        public async Task<bool> EditAddress(UpdatedAddressExternal address, int addressId, CancellationToken cancellationToken)
         {
-            var addressToUpdate = _mapper.Map<Address>(address);
+            var addressToUpdate = await _context.Addresses.FirstOrDefaultAsync(x => x.Id == addressId);
+
+            if (addressToUpdate == null)
+            {
+                return false;
+            }
+
+            addressToUpdate.PostCode = address.PostCode;
+            addressToUpdate.Street = address.Street;
+            addressToUpdate.City = address.City;
+            addressToUpdate.FlatNumber = address.FlatNumber;
+            addressToUpdate.BuildingNumber = address.BuildingNumber;
+            
             _context.Addresses.Update(addressToUpdate);
             var result = await _context.SaveChangesAsync(cancellationToken);
+            
             return Convert.ToBoolean(result);
         }
 
         public async Task<bool> DeleteAddress(int addressId, CancellationToken cancellationToken)
         {
             var addressToRemove = await _context.Addresses.FirstOrDefaultAsync(x => x.Id == addressId);
-            
-            if (addressToRemove != null)
+
+            if (addressToRemove == null)
             {
                 return false;
             }
-            
+
             _context.Addresses.Remove(addressToRemove);
+            
             var result = await _context.SaveChangesAsync(cancellationToken);
+            
             return Convert.ToBoolean(result);
         }
     }

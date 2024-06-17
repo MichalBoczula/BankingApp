@@ -23,7 +23,9 @@ namespace Banking.Persistance.Repositories.Queries.Concrete
             var customer = await _queryDbContext.Customers
                 .Include(x => x.BankingAccounts)
                 .ThenInclude(x => x.Operations)
-                .Where(c=> c.CustomerNumber == customerNumber).FirstOrDefaultAsync();
+                .Where(c=> c.CustomerNumber == customerNumber)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
             var result = _mapper.Map<CustomerAccountDataDto>(customer);
 
             return result;
@@ -35,7 +37,9 @@ namespace Banking.Persistance.Repositories.Queries.Concrete
                 .Include(x => x.Addresses)
                 .Include(x => x.Emails)
                 .Include(x => x.Phones)
-                .Where(c => c.CustomerNumber == customerNumber).FirstOrDefaultAsync();
+                .Where(c => c.CustomerNumber == customerNumber)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
             var result = _mapper.Map<CustomerPersonalDataDto>(customer);
 
             return result;

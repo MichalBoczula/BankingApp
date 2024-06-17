@@ -10,9 +10,15 @@ namespace Banking.Persistance.Profiles.Commands
     {
         public CommandsMappingProfiles()
         {
-            CreateMap<AddressExternal, Address>()
+            CreateMap<CreatedAddressExternal, Address>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.CustomerRef, opt => opt.Ignore());
+
+            CreateMap<UpdatedAddressExternal, Address>()
+               .ForMember(dest => dest.Id, opt => opt.Ignore())
+               .ForMember(dest => dest.CustomerId, opt => opt.Ignore())
+               .ForMember(dest => dest.CustomerRef, opt => opt.Ignore())
+               .ForMember(dest => dest.VerificationStatus, opt => opt.Ignore());
         }
     }
 }

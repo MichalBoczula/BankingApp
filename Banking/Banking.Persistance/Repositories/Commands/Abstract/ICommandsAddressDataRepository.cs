@@ -8,8 +8,8 @@ namespace Banking.Persistance.Repositories.Commands.Abstract
 {
     internal interface ICommandsAddressDataRepository
     {
-        Task<int> AddAddress(AddressExternal address, CancellationToken cancellationToken);
-        Task<bool> EditAddress(AddressExternal address, CancellationToken cancellationToken);
+        Task<int> AddAddress(CreatedAddressExternal address, CancellationToken cancellationToken);
+        Task<bool> EditAddress(UpdatedAddressExternal address, int addressId, CancellationToken cancellationToken);
         Task<bool> DeleteAddress(int addressId, CancellationToken cancellationToken);
     }
 }

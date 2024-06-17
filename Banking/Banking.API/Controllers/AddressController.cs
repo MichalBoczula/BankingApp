@@ -1,4 +1,6 @@
 ﻿using Banking.Application.Features.Commands.Addresses.AddAddress;
+using Banking.Application.Features.Commands.Addresses.DeleteAddress;
+using Banking.Application.Features.Commands.Addresses.EditAddress;
 using Banking.Application.Features.Queries.Addresses;
 using BankingApp.DataTransferObject.Externals;
 using BankingApp.DataTransferObject.Internals.CustomerAccountData;
@@ -26,9 +28,23 @@ namespace Banking.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<ActionResult<CustomerAccountDataDto>> AddAddress(AddressExternal address)
+        public async Task<ActionResult<CustomerAccountDataDto>> AddAddress([FromBody] CreatedAddressExternal address)
         {
             var result = await _mediator.Send(new AddAddressCommand { Contract = address });
+            return Ok(result);
+        }
+
+        [HttpPut("{addressId}")]
+        public async Task<ActionResult<CustomerAccountDataDto>> EditAddress(int addressId,[FromBody] UpdatedAddressExternal address)
+        {
+            var result = await _mediator.Send(new EditAddressCommand { Contract = address, AddressId = addressId });
+            return Ok(result);
+        }
+
+        [HttpDelete("{addressId}")]
+        public async Task<ActionResult<CustomerAccountDataDto>> DeleteAddress(int addressId)
+        {
+            var result = await _mediator.Send(new DeleteAddressCommand { AddressId = addressId });
             return Ok(result);
         }
     }
