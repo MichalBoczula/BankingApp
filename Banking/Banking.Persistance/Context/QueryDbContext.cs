@@ -5,7 +5,9 @@ using Banking.Persistance.Seed;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Banking.Persistance.UnitTests")]
 namespace Banking.Persistance.Context
 {
     internal class QueryDbContext : DbContext, IQueryDbContext

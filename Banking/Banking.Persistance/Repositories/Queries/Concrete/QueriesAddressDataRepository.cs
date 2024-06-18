@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Banking.Persistance.Repositories.Base;
 using Banking.Persistance.Repositories.Queries.Abstract;
-using BankingApp.DataTransferObject.Externals;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using Microsoft.EntityFrameworkCore;
 

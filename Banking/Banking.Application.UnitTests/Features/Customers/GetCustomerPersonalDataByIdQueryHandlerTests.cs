@@ -4,7 +4,7 @@ using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using FluentAssertions;
 using Moq;
 
-namespace Banking.Application.UnitTests.Features
+namespace Banking.Application.UnitTests.Features.Customers
 {
     [TestFixture]
     public class GetCustomerPersonalDataByIdQueryHandlerTests

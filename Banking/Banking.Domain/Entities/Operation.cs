@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Banking.Persistance")]
+[assembly: InternalsVisibleTo("Banking.Persistance.UnitTests")]
 namespace Banking.Domain.Entities
 {
     internal class Operation
