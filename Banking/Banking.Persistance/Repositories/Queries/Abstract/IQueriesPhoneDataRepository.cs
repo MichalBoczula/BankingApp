@@ -6,8 +6,8 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Banking.Persistance.Repositories.Queries.Abstract
 {
-    internal interface IQueriesAddressDataRepository
+    internal interface IQueriesPhoneDataRepository
     {
-        Task<AddressDto> GetAddressById(int addressId);
+        Task<PhoneDto> GetPhoneById(int phoneId);
     }
 }

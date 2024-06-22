@@ -1,6 +1,7 @@
 ﻿using Banking.Application.Features.Queries.CustomerData.GetCustomerAccountDataById;
 using Banking.Application.Features.Queries.CustomerData.GetCustomerPersonalDataById;
 using BankingApp.DataTransferObject.Internals.CustomerAccountData;
+using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +26,7 @@ namespace Banking.API.Controllers
         }
 
         [HttpGet("CustomerPersonalData/{customerNumber}")]
-        public async Task<ActionResult<CustomerAccountDataDto>> GetCustomerPersonalDataById(Guid customerNumber)
+        public async Task<ActionResult<CustomerPersonalDataDto>> GetCustomerPersonalDataById(Guid customerNumber)
         {
             var result = await _mediator.Send(new GetCustomerPersonalDataByIdQuery { CustomerNumber = customerNumber });
             return Ok(result);
