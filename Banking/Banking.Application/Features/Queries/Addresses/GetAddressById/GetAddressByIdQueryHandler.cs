@@ -4,7 +4,7 @@ using MediatR;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Banking.Application.UnitTests")]
-namespace Banking.Application.Features.Queries.Addresses
+namespace Banking.Application.Features.Queries.Addresses.GetAddressById
 {
     internal record GetAddressByIdQueryHandler : IRequestHandler<GetAddressByIdQuery, AddressDto>
     {

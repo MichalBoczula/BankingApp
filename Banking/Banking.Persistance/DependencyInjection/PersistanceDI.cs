@@ -35,6 +35,7 @@ namespace Banking.Persistance.DependencyInjection
             services.AddScoped<IQueriesEmailDataRepository, QueriesEmailDataRepository>();
 
             services.AddScoped<ICommandsAddressDataRepository, CommandsAddressDataRepository>();
+            services.AddScoped<ICommandsEmailDataRepository, CommandsEmailDataRepository>();
 
             return services;
         }

@@ -1,5 +1,5 @@
 ﻿using Banking.Application.Features.Queries.Emails;
-using Banking.Application.Features.Queries.Phones;
+using Banking.Application.Features.Queries.Phones.GetPhoneById;
 using Banking.Persistance.Repositories.Queries.Abstract;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using FluentAssertions;

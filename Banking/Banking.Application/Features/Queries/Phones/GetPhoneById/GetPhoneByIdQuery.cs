@@ -1,7 +1,7 @@
 ﻿using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using MediatR;
 
-namespace Banking.Application.Features.Queries.Phones
+namespace Banking.Application.Features.Queries.Phones.GetPhoneById
 {
     internal class GetPhoneByIdQuery : IRequest<PhoneDto>
     {

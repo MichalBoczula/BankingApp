@@ -4,7 +4,6 @@ using Banking.Persistance.Repositories.Base;
 using Banking.Persistance.Repositories.Commands.Abstract;
 using BankingApp.DataTransferObject.Externals;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
 
 namespace Banking.Persistance.Repositories.Commands.Concrete
 {
@@ -22,10 +21,10 @@ namespace Banking.Persistance.Repositories.Commands.Concrete
         public async Task<int> AddAddress(CreatedAddressExternal address, CancellationToken cancellationToken)
         {
             var addressToAdd = _mapper.Map<Address>(address);
-            
+
             await _context.Addresses.AddAsync(addressToAdd);
             await _context.SaveChangesAsync(cancellationToken);
-            
+
             return addressToAdd.Id;
         }
 
@@ -43,10 +42,10 @@ namespace Banking.Persistance.Repositories.Commands.Concrete
             addressToUpdate.City = address.City;
             addressToUpdate.FlatNumber = address.FlatNumber;
             addressToUpdate.BuildingNumber = address.BuildingNumber;
-            
+
             _context.Addresses.Update(addressToUpdate);
             var result = await _context.SaveChangesAsync(cancellationToken);
-            
+
             return Convert.ToBoolean(result);
         }
 
@@ -60,9 +59,9 @@ namespace Banking.Persistance.Repositories.Commands.Concrete
             }
 
             _context.Addresses.Remove(addressToRemove);
-            
+
             var result = await _context.SaveChangesAsync(cancellationToken);
-            
+
             return Convert.ToBoolean(result);
         }
     }

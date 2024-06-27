@@ -2,7 +2,7 @@
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using MediatR;
 
-namespace Banking.Application.Features.Queries.Emails
+namespace Banking.Application.Features.Queries.Emails.GetEmailById
 {
     internal class GetEmailByIdQueryHandler : IRequestHandler<GetEmailByIdQuery, EmailDto>
     {
@@ -10,7 +10,7 @@ namespace Banking.Application.Features.Queries.Emails
 
         public GetEmailByIdQueryHandler(IQueriesEmailDataRepository queriesEmailsDataRepository)
         {
-            this._queriesEmailsDataRepository = queriesEmailsDataRepository;
+            _queriesEmailsDataRepository = queriesEmailsDataRepository;
         }
 
         public async Task<EmailDto> Handle(GetEmailByIdQuery request, CancellationToken cancellationToken)

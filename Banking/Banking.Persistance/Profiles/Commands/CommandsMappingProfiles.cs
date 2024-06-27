@@ -19,6 +19,10 @@ namespace Banking.Persistance.Profiles.Commands
                .ForMember(dest => dest.CustomerId, opt => opt.Ignore())
                .ForMember(dest => dest.CustomerRef, opt => opt.Ignore())
                .ForMember(dest => dest.VerificationStatus, opt => opt.Ignore());
+
+            CreateMap<CreatedEmailExternal, Email>()
+               .ForMember(dest => dest.Id, opt => opt.Ignore())
+               .ForMember(dest => dest.CustomerRef, opt => opt.Ignore());
         }
     }
 }

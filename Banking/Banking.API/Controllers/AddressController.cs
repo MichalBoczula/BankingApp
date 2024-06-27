@@ -1,7 +1,7 @@
 ﻿using Banking.Application.Features.Commands.Addresses.AddAddress;
 using Banking.Application.Features.Commands.Addresses.DeleteAddress;
 using Banking.Application.Features.Commands.Addresses.EditAddress;
-using Banking.Application.Features.Queries.Addresses;
+using Banking.Application.Features.Queries.Addresses.GetAddressById;
 using BankingApp.DataTransferObject.Externals;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using MediatR;

@@ -1,4 +1,4 @@
-﻿using Banking.Application.Features.Queries.Emails;
+﻿using Banking.Application.Features.Queries.Emails.GetEmailById;
 using Banking.Persistance.Repositories.Queries.Abstract;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using FluentAssertions;

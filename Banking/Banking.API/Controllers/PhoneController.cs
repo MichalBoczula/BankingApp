@@ -1,4 +1,4 @@
-﻿using Banking.Application.Features.Queries.Phones;
+﻿using Banking.Application.Features.Queries.Phones.GetPhoneById;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

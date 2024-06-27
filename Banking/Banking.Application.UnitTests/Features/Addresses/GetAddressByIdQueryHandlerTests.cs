@@ -1,4 +1,4 @@
-﻿using Banking.Application.Features.Queries.Addresses;
+﻿using Banking.Application.Features.Queries.Addresses.GetAddressById;
 using Banking.Persistance.Repositories.Queries.Abstract;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
 using FluentAssertions;
