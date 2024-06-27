@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Banking.Application.Features.Commands.Addresses.DeleteAddress
 {
-    internal class DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand, bool>
+    internal record DeleteAddressCommandHandler : IRequestHandler<DeleteAddressCommand, bool>
     {
         private readonly ICommandsAddressDataRepository _commandsAddressDataRepository;
 

@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Banking.Application.Features.Commands.Addresses.EditAddress
 {
-    internal class EditAddressCommandHandler : IRequestHandler<EditAddressCommand, bool>
+    internal record EditAddressCommandHandler : IRequestHandler<EditAddressCommand, bool>
     {
         private readonly ICommandsAddressDataRepository _commandsAddressDataRepository;
 

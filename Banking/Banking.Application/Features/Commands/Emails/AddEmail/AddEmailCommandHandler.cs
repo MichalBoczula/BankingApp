@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Banking.Application.Features.Commands.Emails.AddEmail
 {
-    internal class AddEmailCommandHandler : IRequestHandler<AddEmailCommand, int>
+    internal record AddEmailCommandHandler : IRequestHandler<AddEmailCommand, int>
     {
         private readonly ICommandsEmailDataRepository _commandsEmailDataRepository;
 

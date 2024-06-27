@@ -3,8 +3,8 @@ using MediatR;
 
 namespace Banking.Application.Features.Commands.Emails.AddEmail
 {
-    internal class AddEmailCommand : IRequest<int>
+    internal record AddEmailCommand : IRequest<int>
     {
-        public CreatedEmailExternal Contract { get; set; }
+        public required CreatedEmailExternal Contract { get; init; }
     }
 }

@@ -3,11 +3,7 @@ using Banking.Domain.Entities;
 using Banking.Persistance.Repositories.Base;
 using Banking.Persistance.Repositories.Commands.Abstract;
 using BankingApp.DataTransferObject.Externals;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Banking.Persistance.Repositories.Commands.Concrete
 {
@@ -30,6 +26,39 @@ namespace Banking.Persistance.Repositories.Commands.Concrete
             await _context.SaveChangesAsync(cancellationToken);
 
             return emailToAdd.Id;
+        }
+
+        public async Task<bool> EditEmail(UpdatedEmailExternal email, int emailId, CancellationToken cancellationToken)
+        {
+            var emailToUpdate = await _context.Emails.FirstOrDefaultAsync(x => x.Id == emailId);
+
+            if (emailToUpdate == null)
+            {
+                return false;
+            }
+
+            emailToUpdate.Address = email.Address;
+
+            _context.Emails.Update(emailToUpdate);
+            var result = await _context.SaveChangesAsync(cancellationToken);
+
+            return Convert.ToBoolean(result);
+        }
+
+        public async Task<bool> DeleteEmail(int emailId, CancellationToken cancellationToken)
+        {
+            var emailToRemove = await _context.Emails.FirstOrDefaultAsync(x => x.Id == emailId);
+
+            if (emailToRemove == null)
+            {
+                return false;
+            }
+
+            _context.Emails.Remove(emailToRemove);
+
+            var result = await _context.SaveChangesAsync(cancellationToken);
+
+            return Convert.ToBoolean(result);
         }
     }
 }

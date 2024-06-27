@@ -1,4 +1,6 @@
 ﻿using Banking.Application.Features.Commands.Emails.AddEmail;
+using Banking.Application.Features.Commands.Emails.DeleteEmail;
+using Banking.Application.Features.Commands.Emails.EditEmail;
 using Banking.Application.Features.Queries.Emails.GetEmailById;
 using BankingApp.DataTransferObject.Externals;
 using BankingApp.DataTransferObject.Internals.CutomerPersonalData;
@@ -30,6 +32,20 @@ namespace Banking.API.Controllers
         public async Task<ActionResult<int>> AddEmail([FromBody] CreatedEmailExternal email)
         {
             var result = await _mediator.Send(new AddEmailCommand { Contract = email });
+            return Ok(result);
+        }
+
+        [HttpPut("{emailId}")]
+        public async Task<ActionResult<bool>> EditEmail(int emailId, [FromBody] UpdatedEmailExternal email)
+        {
+            var result = await _mediator.Send(new EditEmailCommand { Contract = email, EmailId = emailId });
+            return Ok(result);
+        }
+
+        [HttpDelete("{emailId}")]
+        public async Task<ActionResult<bool>> DeleteAddress(int emailId)
+        {
+            var result = await _mediator.Send(new DeleteEmailCommand { EmailId = emailId });
             return Ok(result);
         }
     }
