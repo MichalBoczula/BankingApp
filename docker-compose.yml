@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  banking.api:
+    image: ${DOCKER_REGISTRY-}bankingapi
+    build:
+      context: .
+      dockerfile: Banking/Banking.API/Dockerfile
+    ports:
+      - "61545:8080"
+      - "61546:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

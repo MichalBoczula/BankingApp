@@ -33,7 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1344E120
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Persistance.UnitTests", "Banking\Banking.Persistance.UnitTests\Banking.Persistance.UnitTests.csproj", "{3D011930-1671-4745-BC8C-695433B47DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Application.UnitTests", "Banking\Banking.Application.UnitTests\Banking.Application.UnitTests.csproj", "{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Application.UnitTests", "Banking\Banking.Application.UnitTests\Banking.Application.UnitTests.csproj", "{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{56D3227A-DD1C-4906-AC63-368D6DC859AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BC3DE97-4CEC-43BF-A23A-1C2470F207C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D3227A-DD1C-4906-AC63-368D6DC859AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D3227A-DD1C-4906-AC63-368D6DC859AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D3227A-DD1C-4906-AC63-368D6DC859AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D3227A-DD1C-4906-AC63-368D6DC859AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
