@@ -10,4 +10,16 @@ services:
       - "61545:8080"
       - "61546:8081"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Container
+      - ConnectionStrings__CommandConnection=Server=db;Database=Banking_Command;User=sa;Password=Your_password123;TrustServerCertificate=True;
+      - ConnectionStrings__QueryConnection=Server=db;Database=Banking_Query;User=sa;Password=Your_password123;TrustServerCertificate=True;
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=Your_password123
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
